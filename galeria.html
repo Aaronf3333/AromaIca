@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Galería - Restaurante Aroma</title>
   <script src="includes.js" defer></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -14,62 +15,94 @@
       color: #333;
     }
 
-    h2 {
-      color: #8B0000;
-      font-size: 32px;
+    .hero-section {
+      background: linear-gradient(135deg, #8B0000 0%, #dc3545 100%);
+      color: white;
       text-align: center;
-      margin-top: 30px;
+      padding: 3rem 1rem;
+    }
+
+    .hero-section h2 {
+      color: white;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     }
 
     .subtitulo {
-      text-align: center;
-      font-size: 18px;
-      color: #555;
-      margin-bottom: 30px;
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.95);
+      margin: 0;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
     }
 
     main {
-      padding: 20px 5%;
+      padding: 2rem 5%;
+      max-width: 1400px;
+      margin: 0 auto;
     }
 
-    h4 {
-      margin-top: 40px;
+    .section-title {
+      margin: 3rem 0 1.5rem;
       color: #8B0000;
-      font-size: 22px;
+      font-size: 1.5rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 2px;
+      background: linear-gradient(to right, #dc3545, transparent);
+      margin-left: 1rem;
     }
 
     .galeria {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin-bottom: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
     }
 
     .foto {
       text-align: center;
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .foto:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
     }
 
     .foto img {
       width: 100%;
-      height: 500px;
+      height: 300px;
       object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeIn 0.8s ease-out forwards;
+      transition: transform 0.3s ease;
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    .foto img:hover {
-      transform: scale(1.03);
+    .foto:hover img {
+      transform: scale(1.05);
     }
 
     .foto p {
-      margin-top: 10px;
-      font-size: 16px;
+      padding: 1rem;
+      margin: 0;
+      font-size: 1rem;
       font-weight: 500;
       color: #555;
+      background: white;
     }
 
     @keyframes fadeIn {
@@ -78,55 +111,358 @@
         transform: translateY(0);
       }
     }
+
+    /* Modal para vista ampliada */
+    .modal-img {
+      max-width: 100%;
+      max-height: 80vh;
+      object-fit: contain;
+    }
+
+    .modal-backdrop {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .modal-content {
+      background: transparent;
+      border: none;
+    }
+
+    .modal-header {
+      border: none;
+      padding: 1rem;
+    }
+
+    .modal-body {
+      padding: 0;
+      text-align: center;
+    }
+
+    .btn-close {
+      background: white;
+      border-radius: 50%;
+      opacity: 0.8;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1200px) {
+      .galeria {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.25rem;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .hero-section {
+        padding: 2.5rem 1rem;
+      }
+
+      .hero-section h2 {
+        font-size: 2.2rem;
+      }
+
+      main {
+        padding: 1.5rem 4%;
+      }
+
+      .galeria {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      }
+
+      .foto img {
+        height: 280px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-section {
+        padding: 2rem 1rem;
+      }
+
+      .hero-section h2 {
+        font-size: 1.8rem;
+      }
+
+      .subtitulo {
+        font-size: 1rem;
+      }
+
+      main {
+        padding: 1.25rem 3%;
+      }
+
+      .section-title {
+        font-size: 1.3rem;
+        margin: 2rem 0 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+      }
+
+      .section-title::after {
+        width: 100%;
+        margin-left: 0;
+      }
+
+      .galeria {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1rem;
+      }
+
+      .foto img {
+        height: 250px;
+      }
+
+      .foto p {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero-section {
+        padding: 1.5rem 0.75rem;
+      }
+
+      .hero-section h2 {
+        font-size: 1.6rem;
+      }
+
+      .subtitulo {
+        font-size: 0.95rem;
+      }
+
+      main {
+        padding: 1rem 2%;
+      }
+
+      .section-title {
+        font-size: 1.2rem;
+      }
+
+      .galeria {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+      }
+
+      .foto img {
+        height: 220px;
+      }
+
+      .foto p {
+        padding: 0.5rem;
+        font-size: 0.85rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-section h2 {
+        font-size: 1.4rem;
+      }
+
+      .subtitulo {
+        font-size: 0.9rem;
+      }
+
+      main {
+        padding: 0.75rem 1.5%;
+      }
+
+      .section-title {
+        font-size: 1.1rem;
+      }
+
+      .foto img {
+        height: 200px;
+      }
+
+      .foto p {
+        font-size: 0.8rem;
+      }
+    }
+
+    @media (max-width: 320px) {
+      .hero-section {
+        padding: 1.25rem 0.5rem;
+      }
+
+      .hero-section h2 {
+        font-size: 1.2rem;
+      }
+
+      .subtitulo {
+        font-size: 0.85rem;
+      }
+
+      main {
+        padding: 0.5rem 1%;
+      }
+
+      .section-title {
+        font-size: 1rem;
+        margin: 1.5rem 0 0.75rem;
+      }
+
+      .galeria {
+        gap: 0.5rem;
+      }
+
+      .foto img {
+        height: 180px;
+      }
+
+      .foto p {
+        padding: 0.4rem;
+        font-size: 0.75rem;
+      }
+    }
+
+    /* Mejoras de accesibilidad */
+    .foto:focus,
+    .foto img:focus {
+      outline: 3px solid #dc3545;
+      outline-offset: 2px;
+    }
+
+    /* Animaciones suaves */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* Optimización para pantallas muy anchas */
+    @media (min-width: 1400px) {
+      .galeria {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+      }
+
+      .foto img {
+        height: 320px;
+      }
+    }
+
+    /* Lazy loading placeholder - solo cuando está cargando */
+    .foto img[loading="lazy"]:not([src]) {
+      background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+      background-size: 400% 400%;
+      animation: shimmer 1.5s ease-in-out infinite;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: 0% 0%; }
+      50% { background-position: 100% 100%; }
+      100% { background-position: 0% 0%; }
+    }
   </style>
 </head>
 <body>
 
   <div id="header"></div>
 
-  <main>
+  <!-- Hero Section -->
+  <section class="hero-section">
     <h2>Galería de Aroma</h2>
     <p class="subtitulo">Capturas reales de nuestros mejores momentos y platos más destacados.</p>
+  </section>
 
-    <h4>📸 Preparación</h4>
+  <main>
+    <!-- Sección Preparación -->
+    <h4 class="section-title">📸 Preparación</h4>
     <div class="galeria">
-      <div class="foto">
-        <img src="https://scontent.fpio2-1.fna.fbcdn.net/v/t39.30808-6/491289315_1094391886037764_9201839510209620393_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFVfojZ20R-a7N-6oV-LS2OAfVGKUcvfmEB9UYpRy9-YTJXSzLU1Xt8KWHvsIcDl4pYnVsgRcXOhx93QYcGbFjL&_nc_ohc=F4iqiCgOpLoQ7kNvwFls5ry&_nc_oc=AdnT6KUJU0Xw1oXQB2T8JGfw4L7enR7WES5ifMCPQhn_SJgpGp7kqjOC_IW_f5mozjZRPjndXuAW2oBuog-QQ3dd&_nc_zt=23&_nc_ht=scontent.fpio2-1.fna&_nc_gid=kS8a8kcXPa4fjOQAtP7tlw&oh=00_AfS8QtxkutfQX5bKUDQ-lQO6MA23TBkRJkzzzgeUnmC2WA&oe=687746AA" alt="Preparación de caja china">
+      <div class="foto" tabindex="0" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="openModal(this)">
+        <img src="https://scontent.fpio2-1.fna.fbcdn.net/v/t39.30808-6/491289315_1094391886037764_9201839510209620393_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFVfojZ20R-a7N-6oV-LS2OAfVGKUcvfmEB9UYpRy9-YTJXSzLU1Xt8KWHvsIcDl4pYnVsgRcXOhx93QYcGbFjL&_nc_ohc=F4iqiCgOpLoQ7kNvwFls5ry&_nc_oc=AdnT6KUJU0Xw1oXQB2T8JGfw4L7enR7WES5ifMCPQhn_SJgpGp7kqjOC_IW_f5mozjZRPjndXuAW2oBuog-QQ3dd&_nc_zt=23&_nc_ht=scontent.fpio2-1.fna&_nc_gid=kS8a8kcXPa4fjOQAtP7tlw&oh=00_AfS8QtxkutfQX5bKUDQ-lQO6MA23TBkRJkzzzgeUnmC2WA&oe=687746AA" alt="Preparación de caja china" loading="lazy">
         <p>Preparación de la caja china</p>
       </div>
-      <div class="foto">
-        <img src="https://scontent.fpio2-1.fna.fbcdn.net/v/t39.30808-6/484933667_1068244221985864_6292023644688456669_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGTRLt1cW1Xo0ZIns1mIHnVj4rOw2IkFHCPis7DYiQUcAYvFKS-Lcb5rDX47Dsf0rQRQI334SoGiZqHCx333DON&_nc_ohc=Qz5th3nIyroQ7kNvwF2V08X&_nc_oc=AdnbbTZVkrsZwAHFe_0gmve4eeopodRhcPMak7BkuEQVq4dA815PRBmcAsTQWjVkNI-9ND7TXzACe_l2m1Meq44v&_nc_zt=23&_nc_ht=scontent.fpio2-1.fna&_nc_gid=LfBKekjJZmdEqQAUq0-yhw&oh=00_AfTg6Gp7PDXW8UI139puxauGNL-kYBE_KaU8-QnGUWKioQ&oe=68773BFC" alt="Chancho al palo en proceso">
+      <div class="foto" tabindex="0" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="openModal(this)">
+        <img src="https://scontent.fpio2-1.fna.fbcdn.net/v/t39.30808-6/484933667_1068244221985864_6292023644688456669_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGTRLt1cW1Xo0ZIns1mIHnVj4rOw2IkFHCPis7DYiQUcAYvFKS-Lcb5rDX47Dsf0rQRQI334SoGiZqHCx333DON&_nc_ohc=Qz5th3nIyroQ7kNvwF2V08X&_nc_oc=AdnbbTZVkrsZwAHFe_0gmve4eeopodRhcPMak7BkuEQVq4dA815PRBmcAsTQWjVkNI-9ND7TXzACe_l2m1Meq44v&_nc_zt=23&_nc_ht=scontent.fpio2-1.fna&_nc_gid=LfBKekjJZmdEqQAUq0-yhw&oh=00_AfTg6Gp7PDXW8UI139puxauGNL-kYBE_KaU8-QnGUWKioQ&oe=68773BFC" alt="Chancho al palo en proceso" loading="lazy">
         <p>Chancho al palo en cocción</p>
       </div>
     </div>
 
-    <h4>🍽️ Platos servidos</h4>
+    <!-- Sección Platos Servidos -->
+    <h4 class="section-title">🍽️ Platos servidos</h4>
     <div class="galeria">
-      <div class="foto">
-        <img src="https://scontent.fpio2-1.fna.fbcdn.net/v/t39.30808-6/470226877_930719748992255_7678132102195497282_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeH4XcURMQL3Ewo2imbeQp502yn3KSo1sfjbKfcpKjWx-GArRcH003c54ZYL04JoOmEe8y80lT7wvZZZvJotcd-3&_nc_ohc=iutIewkTJqgQ7kNvwGlGKQo&_nc_oc=Adk3EBbBFJwumnAvTHbtGoTXpdNAhSyF7A1r5ErxYEIvbYafD_wWdA0yAMm5NRmJkGPZNuMdidnvKRBcCQq8oSAC&_nc_zt=23&_nc_ht=scontent.fpio2-1.fna&_nc_gid=KFH7cOhsona8CbKmtZQCVA&oh=00_AfQVAqEVzYIjX99yZI6NZjOHA_JbfIMZY4z6jg4EisdlHA&oe=68774AF6" alt="Plato servido">
+      <div class="foto" tabindex="0" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="openModal(this)">
+        <img src="https://scontent.fpio2-1.fna.fbcdn.net/v/t39.30808-6/470226877_930719748992255_7678132102195497282_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeH4XcURMQL3Ewo2imbeQp502yn3KSo1sfjbKfcpKjWx-GArRcH003c54ZYL04JoOmEe8y80lT7wvZZZvJotcd-3&_nc_ohc=iutIewkTJqgQ7kNvwGlGKQo&_nc_oc=Adk3EBbBFJwumnAvTHbtGoTXpdNAhSyF7A1r5ErxYEIvbYafD_wWdA0yAMm5NRmJkGPZNuMdidnvKRBcCQq8oSAC&_nc_zt=23&_nc_ht=scontent.fpio2-1.fna&_nc_gid=KFH7cOhsona8CbKmtZQCVA&oh=00_AfQVAqEVzYIjX99yZI6NZjOHA_JbfIMZY4z6jg4EisdlHA&oe=68774AF6" alt="Plato servido" loading="lazy">
         <p>Plato servido al estilo Aroma</p>
       </div>
-      <div class="foto">
-        <img src="https://scontent.fpio2-1.fna.fbcdn.net/v/t39.30808-6/487241744_1077482654395354_661249612520125147_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGCLZu4QkJuL9mfTPxoawU_WwX8PknVCeZbBfw-SdUJ5hfT25j_glijOcZi_Bi7Ggnk6BS1geE3uZhLbRaxDHd9&_nc_ohc=dnn33RVwb_QQ7kNvwG6TzuO&_nc_oc=AdlmiutXoUn84Rdn2axW_Kwme0YsnBk6AtiAxEVhMTK3Qd3iYsEm3O5_sUY5FqU58mLxxeERSQeu8yDTq-LLo-RH&_nc_zt=23&_nc_ht=scontent.fpio2-1.fna&_nc_gid=C9wWXg4Cf7pisV8Iv8fr7g&oh=00_AfSIfbhqW5emdYUYL81_Z7tYMl-HfkGARSNcuGMlHXaSYg&oe=687733B2" alt="Chancho al cilindro">
+      <div class="foto" tabindex="0" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="openModal(this)">
+        <img src="https://scontent.fpio2-1.fna.fbcdn.net/v/t39.30808-6/487241744_1077482654395354_661249612520125147_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGCLZu4QkJuL9mfTPxoawU_WwX8PknVCeZbBfw-SdUJ5hfT25j_glijOcZi_Bi7Ggnk6BS1geE3uZhLbRaxDHd9&_nc_ohc=dnn33RVwb_QQ7kNvwG6TzuO&_nc_oc=AdlmiutXoUn84Rdn2axW_Kwme0YsnBk6AtiAxEVhMTK3Qd3iYsEm3O5_sUY5FqU58mLxxeERSQeu8yDTq-LLo-RH&_nc_zt=23&_nc_ht=scontent.fpio2-1.fna&_nc_gid=C9wWXg4Cf7pisV8Iv8fr7g&oh=00_AfSIfbhqW5emdYUYL81_Z7tYMl-HfkGARSNcuGMlHXaSYg&oe=687733B2" alt="Chancho al cilindro" loading="lazy">
         <p>Chancho al cilindro listo para servir</p>
       </div>
     </div>
 
-    <h4>👨‍👩‍👧‍👦 Clientes</h4>
+    <!-- Sección Clientes -->
+    <h4 class="section-title">👨‍👩‍👧‍👦 Clientes</h4>
     <div class="galeria">
-      <div class="foto">
-        <img src="https://scontent.fpio2-1.fna.fbcdn.net/v/t39.30808-6/487311589_1076723371137949_1126245829252673923_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHCMfLtu85Yk3VRESoKPBHvkUVYrK1OWWiRRVisrU5ZaJgvKjcy1VW1z2cZkC3AM81uty_ISi6TzToBsRN3XJP5&_nc_ohc=MCHPx1Yb6VAQ7kNvwHPH1Lx&_nc_oc=AdneIS-eW4uP-Ov095RjIW6lVATLzJNAGsZHtJ5Xav5LjYkAYheAk9qS130mvobP8DlcVThnNqV3UAwPm_4QbC9e&_nc_zt=23&_nc_ht=scontent.fpio2-1.fna&_nc_gid=-ouUht5WqzJlDb_u7zJoDQ&oh=00_AfSkfZPfY7aw2BopJDl6vXn2iXY3WuOMPqlxzru8_yJRwg&oe=68775C6D" alt="Clientes disfrutando la comida">
+      <div class="foto" tabindex="0" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="openModal(this)">
+        <img src="https://scontent.fpio2-1.fna.fbcdn.net/v/t39.30808-6/487311589_1076723371137949_1126245829252673923_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHCMfLtu85Yk3VRESoKPBHvkUVYrK1OWWiRRVisrU5ZaJgvKjcy1VW1z2cZkC3AM81uty_ISi6TzToBsRN3XJP5&_nc_ohc=MCHPx1Yb6VAQ7kNvwHPH1Lx&_nc_oc=AdneIS-eW4uP-Ov095RjIW6lVATLzJNAGsZHtJ5Xav5LjYkAYheAk9qS130mvobP8DlcVThnNqV3UAwPm_4QbC9e&_nc_zt=23&_nc_ht=scontent.fpio2-1.fna&_nc_gid=-ouUht5WqzJlDb_u7zJoDQ&oh=00_AfSkfZPfY7aw2BopJDl6vXn2iXY3WuOMPqlxzru8_yJRwg&oe=68775C6D" alt="Clientes disfrutando la comida" loading="lazy">
         <p>Clientes disfrutando su comida</p>
       </div>
-      <div class="foto">
-        <img src="https://scontent.fpio2-1.fna.fbcdn.net/v/t39.30808-6/486698070_1076723391137947_3787404987637493782_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFxYFdRCM-AJ_S6eCdgdW0c-65Y_XMGUIv7rlj9cwZQixvzreUnqwn5ReaYIMC37JmfPjdZve9inh_QSaJ9jFnx&_nc_ohc=vBGM7oue6CUQ7kNvwFpGKKL&_nc_oc=AdkqD8_wL4RgpFJ4uIXSkX4nH0cTF_I8wRRRWt_77d2rdyuYhCpPGAx7lCFLrcfVx42AALg_gGEBDJNvhyuwIKYr&_nc_zt=23&_nc_ht=scontent.fpio2-1.fna&_nc_gid=aJaLHiiYRsbvre-eM8mUZw&oh=00_AfSTfHt3D2WSjaCWcuuJigkm1K8IbcXjVPJqwkCXQ3US3A&oe=68774AAD" alt="Vista del restaurante">
+      <div class="foto" tabindex="0" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="openModal(this)">
+        <img src="https://scontent.fpio2-1.fna.fbcdn.net/v/t39.30808-6/486698070_1076723391137947_3787404987637493782_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFxYFdRCM-AJ_S6eCdgdW0c-65Y_XMGUIv7rlj9cwZQixvzreUnqwn5ReaYIMC37JmfPjdZve9inh_QSaJ9jFnx&_nc_ohc=vBGM7oue6CUQ7kNvwFpGKKL&_nc_oc=AdkqD8_wL4RgpFJ4uIXSkX4nH0cTF_I8wRRRWt_77d2rdyuYhCpPGAx7lCFLrcfVx42AALg_gGEBDJNvhyuwIKYr&_nc_zt=23&_nc_ht=scontent.fpio2-1.fna&_nc_gid=aJaLHiiYRsbvre-eM8mUZw&oh=00_AfSTfHt3D2WSjaCWcuuJigkm1K8IbcXjVPJqwkCXQ3US3A&oe=68774AAD" alt="Vista del restaurante" loading="lazy">
         <p>Ambiente cálido del restaurante</p>
       </div>
     </div>
   </main>
 
+  <!-- Modal para vista ampliada -->
+  <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img id="modalImage" src="" alt="" class="modal-img">
+          <p id="modalCaption" class="text-white text-center mt-2"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div id="footer"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+    function openModal(element) {
+      const img = element.querySelector('img');
+      const caption = element.querySelector('p');
+      
+      document.getElementById('modalImage').src = img.src;
+      document.getElementById('modalImage').alt = img.alt;
+      document.getElementById('modalCaption').textContent = caption.textContent;
+    }
+
+    // Keyboard navigation for gallery
+    document.addEventListener('keydown', function(e) {
+      const focusedElement = document.activeElement;
+      if (focusedElement.classList.contains('foto')) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          focusedElement.click();
+        }
+      }
+    });
+
+    // Intersection Observer solo para animación al hacer scroll (opcional)
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    // Las imágenes se muestran inmediatamente, solo se anima el contenedor al hacer scroll
+    document.querySelectorAll('.foto').forEach(foto => {
+      observer.observe(foto);
+    });
+  </script>
 </body>
 </html>
