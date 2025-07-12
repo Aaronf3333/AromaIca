@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Platos Típicos - Restaurante Aroma</title>
 
   <!-- Bootstrap y estilos -->
@@ -17,74 +18,391 @@
       color: #333;
     }
 
-    main {
-      padding: 40px 5%;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-    }
-
-    .plato {
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      transition: transform 0.3s;
-    }
-
-    .plato:hover {
-      transform: scale(1.02);
-    }
-
-    .plato img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .contenido {
-      padding: 15px;
-    }
-
-    .contenido h3 {
-      margin: 0 0 5px;
-      font-size: 20px;
-      color: #8B0000;
-    }
-
-    .contenido p {
-      margin: 0 0 10px;
-      font-size: 15px;
-    }
-
-    .btn-wsp, .btn-delivery {
-      display: inline-block;
-      margin-top: 8px;
-      padding: 8px 15px;
-      border-radius: 5px;
-      font-weight: 500;
-      text-decoration: none;
-      color: white;
-    }
-
-    .btn-wsp {
-      background-color: #25D366;
-    }
-
-    .btn-delivery {
-      background-color: #007BFF;
-    }
-
-    .btn-wsp i, .btn-delivery i {
-      margin-right: 6px;
-    }
-
     .info-horario {
       background: #8B0000;
       color: white;
       text-align: center;
-      padding: 12px 0;
+      padding: 12px 15px;
       font-weight: 500;
+    }
+
+    .info-horario p {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .hero-section {
+      background: linear-gradient(135deg, #8B0000 0%, #dc3545 100%);
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    .hero-section h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .hero-section p {
+      font-size: 1.1rem;
+      margin: 0;
+      opacity: 0.95;
+    }
+
+    main {
+      padding: 2rem 5%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .plato {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .plato:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+
+    .plato img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .plato:hover img {
+      transform: scale(1.05);
+    }
+
+    .contenido {
+      padding: 1.5rem;
+    }
+
+    .contenido h3 {
+      margin: 0 0 0.75rem;
+      font-size: 1.25rem;
+      color: #8B0000;
+      font-weight: 600;
+    }
+
+    .contenido p {
+      margin: 0 0 1.25rem;
+      font-size: 0.95rem;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    .buttons-container {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .btn-wsp, .btn-delivery {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-weight: 500;
+      text-decoration: none;
+      color: white;
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    .btn-wsp {
+      background-color: #25D366;
+      border: 2px solid #25D366;
+    }
+
+    .btn-wsp:hover {
+      background-color: #1ea952;
+      border-color: #1ea952;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    }
+
+    .btn-delivery {
+      background-color: #007BFF;
+      border: 2px solid #007BFF;
+    }
+
+    .btn-delivery:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+    }
+
+    .btn-wsp i, .btn-delivery i {
+      margin-right: 8px;
+      font-size: 1rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1200px) {
+      main {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .hero-section {
+        padding: 2.5rem 1rem;
+      }
+
+      .hero-section h1 {
+        font-size: 2.2rem;
+      }
+
+      main {
+        padding: 1.5rem 4%;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      }
+
+      .buttons-container {
+        flex-direction: row;
+        gap: 0.5rem;
+      }
+
+      .btn-wsp, .btn-delivery {
+        flex: 1;
+        font-size: 0.85rem;
+        padding: 8px 12px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .info-horario p {
+        font-size: 0.9rem;
+      }
+
+      .hero-section {
+        padding: 2rem 1rem;
+      }
+
+      .hero-section h1 {
+        font-size: 1.8rem;
+      }
+
+      .hero-section p {
+        font-size: 1rem;
+      }
+
+      main {
+        padding: 1.25rem 3%;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+
+      .plato img {
+        height: 200px;
+      }
+
+      .contenido {
+        padding: 1.25rem;
+      }
+
+      .buttons-container {
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .btn-wsp, .btn-delivery {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .info-horario {
+        padding: 10px 12px;
+      }
+
+      .info-horario p {
+        font-size: 0.85rem;
+      }
+
+      .hero-section {
+        padding: 1.5rem 0.75rem;
+      }
+
+      .hero-section h1 {
+        font-size: 1.6rem;
+      }
+
+      .hero-section p {
+        font-size: 0.95rem;
+      }
+
+      main {
+        padding: 1rem 2%;
+        gap: 1rem;
+      }
+
+      .plato img {
+        height: 180px;
+      }
+
+      .contenido {
+        padding: 1rem;
+      }
+
+      .contenido h3 {
+        font-size: 1.1rem;
+      }
+
+      .contenido p {
+        font-size: 0.9rem;
+      }
+
+      .btn-wsp, .btn-delivery {
+        padding: 9px 12px;
+        font-size: 0.85rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .info-horario p {
+        font-size: 0.8rem;
+      }
+
+      .hero-section h1 {
+        font-size: 1.4rem;
+      }
+
+      .hero-section p {
+        font-size: 0.9rem;
+      }
+
+      main {
+        padding: 0.75rem 1.5%;
+      }
+
+      .plato img {
+        height: 160px;
+      }
+
+      .contenido {
+        padding: 0.75rem;
+      }
+
+      .contenido h3 {
+        font-size: 1rem;
+      }
+
+      .contenido p {
+        font-size: 0.85rem;
+      }
+
+      .btn-wsp, .btn-delivery {
+        padding: 8px 10px;
+        font-size: 0.8rem;
+      }
+
+      .btn-wsp i, .btn-delivery i {
+        margin-right: 6px;
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 320px) {
+      .info-horario {
+        padding: 8px 10px;
+      }
+
+      .info-horario p {
+        font-size: 0.75rem;
+      }
+
+      .hero-section {
+        padding: 1.25rem 0.5rem;
+      }
+
+      .hero-section h1 {
+        font-size: 1.2rem;
+      }
+
+      .hero-section p {
+        font-size: 0.85rem;
+      }
+
+      main {
+        padding: 0.5rem 1%;
+        gap: 0.75rem;
+      }
+
+      .plato img {
+        height: 140px;
+      }
+
+      .contenido {
+        padding: 0.5rem;
+      }
+
+      .contenido h3 {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .contenido p {
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
+      }
+
+      .buttons-container {
+        gap: 0.5rem;
+      }
+
+      .btn-wsp, .btn-delivery {
+        padding: 7px 8px;
+        font-size: 0.75rem;
+      }
+
+      .btn-wsp i, .btn-delivery i {
+        margin-right: 4px;
+        font-size: 0.8rem;
+      }
+    }
+
+    /* Mejoras de accesibilidad */
+    .btn-wsp:focus,
+    .btn-delivery:focus {
+      outline: 3px solid rgba(255, 255, 255, 0.5);
+      outline-offset: 2px;
+    }
+
+    /* Animaciones suaves */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* Optimización para pantallas muy anchas */
+    @media (min-width: 1400px) {
+      main {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2.5rem;
+      }
     }
   </style>
 </head>
@@ -99,9 +417,9 @@
   </div>
 
   <!-- TÍTULO -->
-  <section class="text-center py-4 bg-light">
-    <h1 class="text-danger fw-bold">Menú Especial</h1>
-    <p class="lead">Nuestros mejores platos de chancho, preparados con pasión.</p>
+  <section class="hero-section">
+    <h1>Menú Especial</h1>
+    <p>Nuestros mejores platos de chancho, preparados con pasión.</p>
   </section>
 
   <!-- PLATOS -->
@@ -109,56 +427,66 @@
 
     <!-- Chaufa de Chancho -->
     <div class="plato">
-      <img src="https://scontent.fpio2-1.fna.fbcdn.net/v/t39.30808-6/469939344_929215619142668_5731627454412564599_n.jpg?stp=c0.132.1260.1260a_dst-jpg_s206x206_tt6&_nc_cat=101&ccb=1-7&_nc_sid=50ad20&_nc_eui2=AeG2DGurVqvzpuzFVqlkzWCKYpVoAJNlwd9ilWgAk2XB39nXfEzqW3ajXvgTybSN-F1kLyZbkPPE93n2_NS2EJKx&_nc_ohc=gskhEnaAMn8Q7kNvwF9iE3m&_nc_oc=AdllILb4lFvSRzkrC3As9kaVAsiE_xPT6sycutvzoaoBJ7lo8X7qYucy2LL3qUFIQaeqyj-M12qj-wHvFpfvWfem&_nc_zt=23&_nc_ht=scontent.fpio2-1.fna&_nc_gid=rIqHuNY0EIAWIsznLQkEPA&oh=00_AfQApVw1PFuybQUstzIdnWza9X7L01yQzo6Vr2IA-ZzI3Q&oe=68774224" alt="Chaufa de Chancho">
+      <img src="https://scontent.fpio2-1.fna.fbcdn.net/v/t39.30808-6/469939344_929215619142668_5731627454412564599_n.jpg?stp=c0.132.1260.1260a_dst-jpg_s206x206_tt6&_nc_cat=101&ccb=1-7&_nc_sid=50ad20&_nc_eui2=AeG2DGurVqvzpuzFVqlkzWCKYpVoAJNlwd9ilWgAk2XB39nXfEzqW3ajXvgTybSN-F1kLyZbkPPE93n2_NS2EJKx&_nc_ohc=gskhEnaAMn8Q7kNvwF9iE3m&_nc_oc=AdllILb4lFvSRzkrC3As9kaVAsiE_xPT6sycutvzoaoBJ7lo8X7qYucy2LL3qUFIQaeqyj-M12qj-wHvFpfvWfem&_nc_zt=23&_nc_ht=scontent.fpio2-1.fna&_nc_gid=rIqHuNY0EIAWIsznLQkEPA&oh=00_AfQApVw1PFuybQUstzIdnWza9X7L01yQzo6Vr2IA-ZzI3Q&oe=68774224" alt="Chaufa de Chancho" loading="lazy">
       <div class="contenido">
         <h3>Chaufa de Chancho</h3>
         <p>Arroz chaufa con trozos de chancho frito y salsa oriental.</p>
-        <a class="btn-wsp" href="https://wa.me/51979227265?text=Hola%20quisiera%20hacer%20un%20pedido%20de%20Chaufa%20de%20Chancho" target="_blank"><i class="bi bi-whatsapp"></i> Pedir por WhatsApp</a>
-        <a class="btn-delivery" href="https://wa.me/51979227265?text=Hola,%20quisiera%20hacer%20un%20pedido%20por%20DELIVERY" target="_blank"><i class="bi bi-truck"></i> Delivery</a>
+        <div class="buttons-container">
+          <a class="btn-wsp" href="https://wa.me/51979227265?text=Hola%20quisiera%20hacer%20un%20pedido%20de%20Chaufa%20de%20Chancho" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i> Pedir por WhatsApp</a>
+          <a class="btn-delivery" href="https://wa.me/51979227265?text=Hola,%20quisiera%20hacer%20un%20pedido%20por%20DELIVERY" target="_blank" rel="noopener"><i class="bi bi-truck"></i> Delivery</a>
+        </div>
       </div>
     </div>
 
     <!-- Carapulcra con Sopa Seca -->
     <div class="plato">
-      <img src="https://scontent.fpio2-1.fna.fbcdn.net/v/t39.30808-6/469875992_929214575809439_2692543610298464449_n.jpg?stp=c113.0.452.452a_dst-jpg_s206x206_tt6&_nc_cat=106&ccb=1-7&_nc_sid=50ad20&_nc_eui2=AeEHskMNbML-GK1Gz92S1TDxy1DN8QUIYFHLUM3xBQhgUUDJLm6g5dXoVO2rIDHRQMegRBWUZICkKnaO6g4fBvZV&_nc_ohc=GMWU1n-YjX0Q7kNvwESyJau&_nc_oc=AdkwAjqQKrEkVZgcLKHXlZ27vWJG698HyTNRZDjWPlu1ZJKTXwe0cnEbeGt0x1_ncUkv_CiDsL9vN_1ADmz4h-AJ&_nc_zt=23&_nc_ht=scontent.fpio2-1.fna&_nc_gid=rIqHuNY0EIAWIsznLQkEPA&oh=00_AfTBFD_HROu9-_vqzWayfiDDvDcoNKwke--MsMYkUgmMgQ&oe=68773A8E" alt="Carapulcra con Sopa Seca">
+      <img src="https://scontent.fpio2-1.fna.fbcdn.net/v/t39.30808-6/469875992_929214575809439_2692543610298464449_n.jpg?stp=c113.0.452.452a_dst-jpg_s206x206_tt6&_nc_cat=106&ccb=1-7&_nc_sid=50ad20&_nc_eui2=AeEHskMNbML-GK1Gz92S1TDxy1DN8QUIYFHLUM3xBQhgUUDJLm6g5dXoVO2rIDHRQMegRBWUZICkKnaO6g4fBvZV&_nc_ohc=GMWU1n-YjX0Q7kNvwESyJau&_nc_oc=AdkwAjqQKrEkVZgcLKHXlZ27vWJG698HyTNRZDjWPlu1ZJKTXwe0cnEbeGt0x1_ncUkv_CiDsL9vN_1ADmz4h-AJ&_nc_zt=23&_nc_ht=scontent.fpio2-1.fna&_nc_gid=rIqHuNY0EIAWIsznLQkEPA&oh=00_AfTBFD_HROu9-_vqzWayfiDDvDcoNKwke--MsMYkUgmMgQ&oe=68773A8E" alt="Carapulcra con Sopa Seca" loading="lazy">
       <div class="contenido">
         <h3>Carapulcra con Sopa Seca</h3>
         <p>Delicia iqueña con papa seca, tallarines y chancho.</p>
-        <a class="btn-wsp" href="https://wa.me/51979227265?text=Hola%20quisiera%20hacer%20un%20pedido%20de%20Carapulcra%20con%20Sopa%20Seca" target="_blank"><i class="bi bi-whatsapp"></i> Pedir por WhatsApp</a>
-        <a class="btn-delivery" href="https://wa.me/51979227265?text=Hola,%20quisiera%20hacer%20un%20pedido%20por%20DELIVERY" target="_blank"><i class="bi bi-truck"></i> Delivery</a>
+        <div class="buttons-container">
+          <a class="btn-wsp" href="https://wa.me/51979227265?text=Hola%20quisiera%20hacer%20un%20pedido%20de%20Carapulcra%20con%20Sopa%20Seca" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i> Pedir por WhatsApp</a>
+          <a class="btn-delivery" href="https://wa.me/51979227265?text=Hola,%20quisiera%20hacer%20un%20pedido%20por%20DELIVERY" target="_blank" rel="noopener"><i class="bi bi-truck"></i> Delivery</a>
+        </div>
       </div>
     </div>
 
     <!-- Chancho a la Caja China -->
     <div class="plato">
-      <img src="https://scontent.fpio2-1.fna.fbcdn.net/v/t39.30808-6/487956260_1078981577578795_8709063498760344093_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGKZ9yXDj-H4oUIsfvIA5oGLuVdsMglNkQu5V2wyCU2RJQDJyIzULGE8G3x4Qb1gsrpRRhNlgJ-GVp1p4-Abxm4&_nc_ohc=7RJvRRaRB9AQ7kNvwFRZPch&_nc_oc=AdnJoQH-gZejS8oEHDA7Cpc5o7dJf3-QZN_eXIgQgiZ42HH6Mn28vGO9gg9DA-qxg6u0N9JjY1DxVC4_-klwK38d&_nc_zt=23&_nc_ht=scontent.fpio2-1.fna&_nc_gid=yT-H75Pz2sVv_g8AXnbO2g&oh=00_AfRXF_sPP1Twl2-7-GOnqKFSKfp-JmMc2UA01QKYgbPWZw&oe=68773372" alt="Chancho a la Caja China">
+      <img src="https://scontent.fpio2-1.fna.fbcdn.net/v/t39.30808-6/487956260_1078981577578795_8709063498760344093_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGKZ9yXDj-H4oUIsfvIA5oGLuVdsMglNkQu5V2wyCU2RJQDJyIzULGE8G3x4Qb1gsrpRRhNlgJ-GVp1p4-Abxm4&_nc_ohc=7RJvRRaRB9AQ7kNvwFRZPch&_nc_oc=AdnJoQH-gZejS8oEHDA7Cpc5o7dJf3-QZN_eXIgQgiZ42HH6Mn28vGO9gg9DA-qxg6u0N9JjY1DxVC4_-klwK38d&_nc_zt=23&_nc_ht=scontent.fpio2-1.fna&_nc_gid=yT-H75Pz2sVv_g8AXnbO2g&oh=00_AfRXF_sPP1Twl2-7-GOnqKFSKfp-JmMc2UA01QKYgbPWZw&oe=68773372" alt="Chancho a la Caja China" loading="lazy">
       <div class="contenido">
         <h3>Chancho a la Caja China</h3>
         <p>Corteza crocante y carne jugosa al estilo tradicional.</p>
-        <a class="btn-wsp" href="https://wa.me/51979227265?text=Hola%20quisiera%20hacer%20un%20pedido%20de%20Chancho%20a%20la%20Caja%20China" target="_blank"><i class="bi bi-whatsapp"></i> Pedir por WhatsApp</a>
-        <a class="btn-delivery" href="https://wa.me/51979227265?text=Hola,%20quisiera%20hacer%20un%20pedido%20por%20DELIVERY" target="_blank"><i class="bi bi-truck"></i> Delivery</a>
+        <div class="buttons-container">
+          <a class="btn-wsp" href="https://wa.me/51979227265?text=Hola%20quisiera%20hacer%20un%20pedido%20de%20Chancho%20a%20la%20Caja%20China" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i> Pedir por WhatsApp</a>
+          <a class="btn-delivery" href="https://wa.me/51979227265?text=Hola,%20quisiera%20hacer%20un%20pedido%20por%20DELIVERY" target="_blank" rel="noopener"><i class="bi bi-truck"></i> Delivery</a>
+        </div>
       </div>
     </div>
 
     <!-- Chancho al Palo -->
     <div class="plato">
-      <img src="https://scontent.fpio2-1.fna.fbcdn.net/v/t39.30808-6/488964688_1082525283891091_7954818137536091323_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFtnrf8jKLHBHbK3Q6ZuUi0aXsOrfruvY5pew6t-u69ju4KgSvcgdqOF_tITX215KjLEG5denheoyq6t744T8GX&_nc_ohc=kmGWLok70OMQ7kNvwHIev1d&_nc_oc=AdlmTrQs_nYAok_ecIwnE_eo1D54sQXN4omA_WoFkQne13iAX8M4oWK1ZRSETWjKGsVDekRAN4qhFJX1djtk0M2x&_nc_zt=23&_nc_ht=scontent.fpio2-1.fna&_nc_gid=b8Z8gznBJPWSGDdqoyqAGA&oh=00_AfS-6hp2uDgzj6rDtS9uJ1STHnziLqU9UCqNx7w72MT1lg&oe=68773C9B" alt="Chancho al Palo">
+      <img src="https://scontent.fpio2-1.fna.fbcdn.net/v/t39.30808-6/488964688_1082525283891091_7954818137536091323_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFtnrf8jKLHBHbK3Q6ZuUi0aXsOrfruvY5pew6t-u69ju4KgSvcgdqOF_tITX215KjLEG5denheoyq6t744T8GX&_nc_ohc=kmGWLok70OMQ7kNvwHIev1d&_nc_oc=AdlmTrQs_nYAok_ecIwnE_eo1D54sQXN4omA_WoFkQne13iAX8M4oWK1ZRSETWjKGsVDekRAN4qhFJX1djtk0M2x&_nc_zt=23&_nc_ht=scontent.fpio2-1.fna&_nc_gid=b8Z8gznBJPWSGDdqoyqAGA&oh=00_AfS-6hp2uDgzj6rDtS9uJ1STHnziLqU9UCqNx7w72MT1lg&oe=68773C9B" alt="Chancho al Palo" loading="lazy">
       <div class="contenido">
         <h3>Chancho al Palo</h3>
         <p>Chancho cocido al fuego directo con sabor intenso.</p>
-        <a class="btn-wsp" href="https://wa.me/51979227265?text=Hola%20quisiera%20hacer%20un%20pedido%20de%20Chancho%20al%20Palo" target="_blank"><i class="bi bi-whatsapp"></i> Pedir por WhatsApp</a>
-        <a class="btn-delivery" href="https://wa.me/51979227265?text=Hola,%20quisiera%20hacer%20un%20pedido%20por%20DELIVERY" target="_blank"><i class="bi bi-truck"></i> Delivery</a>
+        <div class="buttons-container">
+          <a class="btn-wsp" href="https://wa.me/51979227265?text=Hola%20quisiera%20hacer%20un%20pedido%20de%20Chancho%20al%20Palo" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i> Pedir por WhatsApp</a>
+          <a class="btn-delivery" href="https://wa.me/51979227265?text=Hola,%20quisiera%20hacer%20un%20pedido%20por%20DELIVERY" target="_blank" rel="noopener"><i class="bi bi-truck"></i> Delivery</a>
+        </div>
       </div>
     </div>
 
     <!-- Chancho al Cilindro -->
     <div class="plato">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLv-ZTK0wJppIy6x679-afDlTWxyRlCsqylQ&s" alt="Chancho al Cilindro">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLv-ZTK0wJppIy6x679-afDlTWxyRlCsqylQ&s" alt="Chancho al Cilindro" loading="lazy">
       <div class="contenido">
         <h3>Chancho al Cilindro</h3>
         <p>Chancho ahumado lentamente en cilindro artesanal.</p>
-        <a class="btn-wsp" href="https://wa.me/51979227265?text=Hola%20quisiera%20hacer%20un%20pedido%20de%20Chancho%20al%20Cilindro" target="_blank"><i class="bi bi-whatsapp"></i> Pedir por WhatsApp</a>
-        <a class="btn-delivery" href="https://wa.me/51979227265?text=Hola,%20quisiera%20hacer%20un%20pedido%20por%20DELIVERY" target="_blank"><i class="bi bi-truck"></i> Delivery</a>
+        <div class="buttons-container">
+          <a class="btn-wsp" href="https://wa.me/51979227265?text=Hola%20quisiera%20hacer%20un%20pedido%20de%20Chancho%20al%20Cilindro" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i> Pedir por WhatsApp</a>
+          <a class="btn-delivery" href="https://wa.me/51979227265?text=Hola,%20quisiera%20hacer%20un%20pedido%20por%20DELIVERY" target="_blank" rel="noopener"><i class="bi bi-truck"></i> Delivery</a>
+        </div>
       </div>
     </div>
 
