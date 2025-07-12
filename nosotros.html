@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nosotros - Restaurante Aroma</title>
 
   <!-- Bootstrap + Icons -->
@@ -17,6 +18,30 @@
       color: #333;
     }
 
+    .hero-section {
+      background: linear-gradient(135deg, #8B0000 0%, #dc3545 100%);
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    .hero-section h1 {
+      color: white;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .hero-section p {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.95);
+      margin: 0;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
     .main-layout {
       display: flex;
       flex-wrap: wrap;
@@ -24,62 +49,429 @@
 
     main {
       flex: 1;
-      padding: 30px;
+      padding: 2rem 5%;
       max-width: 100%;
     }
 
     .historia {
-      max-width: 950px;
+      max-width: 1100px;
       margin: auto;
       background: #ffffffee;
-      padding: 35px;
-      border-radius: 15px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(0,0,0,0.05);
     }
 
-    .historia h2 {
+    .section-title {
       text-align: center;
-      font-size: 34px;
+      font-size: 2rem;
       color: #8B0000;
-      margin-bottom: 25px;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(135deg, #8B0000, #dc3545);
+      border-radius: 2px;
+    }
+
+    .section-subtitle {
+      font-size: 1.5rem;
+      color: #8B0000;
+      margin: 2.5rem 0 1rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-subtitle::before {
+      content: '';
+      width: 30px;
+      height: 3px;
+      background: linear-gradient(135deg, #8B0000, #dc3545);
+      border-radius: 2px;
     }
 
     .historia p {
-      font-size: 17px;
-      line-height: 1.7;
-      margin-bottom: 20px;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
       text-align: justify;
+      color: #555;
+    }
+
+    .historia p strong {
+      color: #8B0000;
+      font-weight: 600;
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(139, 0, 0, 0.05), rgba(220, 53, 69, 0.05));
+      border-left: 4px solid #8B0000;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 10px;
+    }
+
+    .highlight-box p {
+      margin: 0;
+      font-style: italic;
+      font-weight: 500;
     }
 
     .equipo {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-      margin-top: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2.5rem;
     }
 
     .equipo figure {
       margin: 0;
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .equipo figure:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
     }
 
     .equipo img {
       width: 100%;
-      border-radius: 10px;
-      height: 220px;
+      height: 250px;
       object-fit: cover;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .equipo figure:hover img {
+      transform: scale(1.05);
     }
 
     .equipo figcaption {
       text-align: center;
-      margin-top: 10px;
-      font-weight: bold;
+      padding: 1.5rem;
+      font-weight: 600;
       color: #8B0000;
+      font-size: 1.1rem;
+      background: white;
+    }
+
+    .stats-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 2.5rem 0;
+    }
+
+    .stat-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      border-left: 4px solid #8B0000;
+    }
+
+    .stat-card i {
+      font-size: 2rem;
+      color: #8B0000;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-card h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #8B0000;
+      margin: 0.5rem 0;
+    }
+
+    .stat-card p {
+      margin: 0;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1200px) {
+      .historia {
+        padding: 2rem;
+      }
+
+      .equipo {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .hero-section {
+        padding: 2.5rem 1rem;
+      }
+
+      .hero-section h1 {
+        font-size: 2.2rem;
+      }
+
+      main {
+        padding: 1.5rem 4%;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .section-subtitle {
+        font-size: 1.3rem;
+      }
+
+      .equipo img {
+        height: 220px;
+      }
     }
 
     @media (max-width: 768px) {
       .main-layout {
         flex-direction: column;
+      }
+
+      .hero-section {
+        padding: 2rem 1rem;
+      }
+
+      .hero-section h1 {
+        font-size: 1.8rem;
+      }
+
+      .hero-section p {
+        font-size: 1rem;
+      }
+
+      main {
+        padding: 1.25rem 3%;
+      }
+
+      .historia {
+        padding: 1.5rem;
+      }
+
+      .section-title {
+        font-size: 1.6rem;
+      }
+
+      .section-subtitle {
+        font-size: 1.2rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+      }
+
+      .section-subtitle::before {
+        width: 100%;
+      }
+
+      .historia p {
+        font-size: 1rem;
+        text-align: left;
+      }
+
+      .equipo {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .equipo img {
+        height: 200px;
+      }
+
+      .stats-section {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+      }
+
+      .stat-card {
+        padding: 1rem;
+      }
+
+      .stat-card i {
+        font-size: 1.5rem;
+      }
+
+      .stat-card h3 {
+        font-size: 1.5rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero-section {
+        padding: 1.5rem 0.75rem;
+      }
+
+      .hero-section h1 {
+        font-size: 1.6rem;
+      }
+
+      .hero-section p {
+        font-size: 0.95rem;
+      }
+
+      main {
+        padding: 1rem 2%;
+      }
+
+      .historia {
+        padding: 1rem;
+      }
+
+      .section-title {
+        font-size: 1.4rem;
+      }
+
+      .section-subtitle {
+        font-size: 1.1rem;
+      }
+
+      .historia p {
+        font-size: 0.95rem;
+      }
+
+      .highlight-box {
+        padding: 1rem;
+      }
+
+      .equipo figcaption {
+        padding: 1rem;
+        font-size: 1rem;
+      }
+
+      .stats-section {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-section h1 {
+        font-size: 1.4rem;
+      }
+
+      .hero-section p {
+        font-size: 0.9rem;
+      }
+
+      main {
+        padding: 0.75rem 1.5%;
+      }
+
+      .historia {
+        padding: 0.75rem;
+      }
+
+      .section-title {
+        font-size: 1.2rem;
+      }
+
+      .section-subtitle {
+        font-size: 1rem;
+      }
+
+      .historia p {
+        font-size: 0.9rem;
+      }
+
+      .equipo img {
+        height: 180px;
+      }
+    }
+
+    @media (max-width: 320px) {
+      .hero-section {
+        padding: 1.25rem 0.5rem;
+      }
+
+      .hero-section h1 {
+        font-size: 1.2rem;
+      }
+
+      .hero-section p {
+        font-size: 0.85rem;
+      }
+
+      main {
+        padding: 0.5rem 1%;
+      }
+
+      .historia {
+        padding: 0.5rem;
+      }
+
+      .section-title {
+        font-size: 1.1rem;
+      }
+
+      .section-subtitle {
+        font-size: 0.9rem;
+      }
+
+      .historia p {
+        font-size: 0.85rem;
+      }
+
+      .highlight-box {
+        padding: 0.75rem;
+      }
+
+      .equipo figcaption {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+      }
+
+      .stat-card {
+        padding: 0.75rem;
+      }
+
+      .stat-card h3 {
+        font-size: 1.2rem;
+      }
+    }
+
+    /* Mejoras de accesibilidad */
+    .equipo figure:focus {
+      outline: 3px solid #dc3545;
+      outline-offset: 2px;
+    }
+
+    /* Animaciones suaves */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* Optimización para pantallas muy anchas */
+    @media (min-width: 1400px) {
+      .equipo {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2.5rem;
+      }
+
+      .equipo img {
+        height: 280px;
       }
     }
   </style>
@@ -92,6 +484,12 @@
   <!-- HEADER -->
   <div id="header" data-include="includes/header.html"></div>
 
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <h1>Quiénes Somos</h1>
+    <p>Conoce la historia detrás de los sabores tradicionales que nos apasionan</p>
+  </section>
+
   <!-- LAYOUT CON SIDEBAR -->
   <div class="main-layout">
     <!-- SIDEBAR -->
@@ -100,32 +498,83 @@
     <!-- CONTENIDO PRINCIPAL -->
     <main>
       <section class="historia">
-        <h2>Quiénes Somos</h2>
+        <h2 class="section-title">Nuestra Historia</h2>
 
         <p><strong>Restaurante Aroma</strong> nace del amor por la cocina tradicional peruana, especialmente por los sabores intensos y ahumados del chancho al cilindro, a la caja china y al palo.</p>
 
         <p>Fundado por la familia Herrera en el corazón de Ica, nuestro restaurante combina ingredientes locales de alta calidad con técnicas artesanales, creando una experiencia gastronómica única para cada visitante.</p>
 
-        <p>Somos más que un restaurante. Somos un espacio de encuentro para familias, amigos y turistas que buscan revivir los sabores de antaño con una presentación moderna y un servicio cálido.</p>
+        <div class="highlight-box">
+          <p>Somos más que un restaurante. Somos un espacio de encuentro para familias, amigos y turistas que buscan revivir los sabores de antaño con una presentación moderna y un servicio cálido.</p>
+        </div>
+
+        <!-- Estadísticas -->
+        <div class="stats-section">
+          <div class="stat-card">
+            <i class="bi bi-calendar-check"></i>
+            <h3>5+</h3>
+            <p>Años de experiencia</p>
+          </div>
+          <div class="stat-card">
+            <i class="bi bi-people"></i>
+            <h3>1000+</h3>
+            <p>Clientes satisfechos</p>
+          </div>
+          <div class="stat-card">
+            <i class="bi bi-award"></i>
+            <h3>100%</h3>
+            <p>Tradición artesanal</p>
+          </div>
+        </div>
 
         <!-- MISIÓN -->
-        <h2>Misión</h2>
+        <h3 class="section-subtitle">🎯 Misión</h3>
         <p>Brindar experiencias culinarias auténticas, rescatando los sabores tradicionales del chancho al cilindro, caja china y al palo, con ingredientes de calidad y un servicio cálido, generando momentos inolvidables para cada cliente.</p>
 
         <!-- VISIÓN -->
-        <h2>Visión</h2>
+        <h3 class="section-subtitle">🔭 Visión</h3>
         <p>Ser reconocidos como el restaurante líder en la región sur del Perú por nuestra excelencia en la preparación de platos de chancho tradicionales, promoviendo la gastronomía local con orgullo y pasión.</p>
 
+        <!-- VALORES -->
+        <h3 class="section-subtitle">💎 Nuestros Valores</h3>
+        <div class="stats-section">
+          <div class="stat-card">
+            <i class="bi bi-heart"></i>
+            <h3>Pasión</h3>
+            <p>Por la cocina tradicional</p>
+          </div>
+          <div class="stat-card">
+            <i class="bi bi-shield-check"></i>
+            <h3>Calidad</h3>
+            <p>En cada ingrediente</p>
+          </div>
+          <div class="stat-card">
+            <i class="bi bi-people-fill"></i>
+            <h3>Familia</h3>
+            <p>Ambiente cálido y acogedor</p>
+          </div>
+          <div class="stat-card">
+            <i class="bi bi-star"></i>
+            <h3>Tradición</h3>
+            <p>Técnicas artesanales</p>
+          </div>
+        </div>
+
+        <h3 class="section-subtitle">👥 Nuestro Equipo</h3>
         <div class="equipo">
           <figure>
-            <img src="https://scontent.fpio2-1.fna.fbcdn.net/v/t39.30808-6/488223620_1080919244051695_1650961124791936739_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFHf6yZ6L1TwQzP1utE2juXckt-Gk3LTxpyS34aTctPGrDAS8dqyn7Nn98NtJabERpVPXjNqaTeDj3csT3To5s6&_nc_ohc=sbhyyPHXPWYQ7kNvwHqdmBz&_nc_oc=AdlNT_cQ1nDhqM5yF2lMQb7mLcb5kw4CXTM92O6V9drx5QH-1-zJDWd2o3aW_dOlB3IV1agv7ux8bgq0t_S1Mcnk&_nc_zt=23&_nc_ht=scontent.fpio2-1.fna&_nc_gid=tlolwcJ4DmPvydmCaZaYKA&oh=00_AfSr3tUVw0lMVXHUFzkTzR7J2jafYt86UyBVnqsNbVNDKg&oe=68777A5C" alt="Fundadores del restaurante">
-            <figcaption>Fundador</figcaption>
+            <img src="https://scontent.fpio2-1.fna.fbcdn.net/v/t39.30808-6/488223620_1080919244051695_1650961124791936739_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFHf6yZ6L1TwQzP1utE2juXckt-Gk3LTxpyS34aTctPGrDAS8dqyn7Nn98NtJabERpVPXjNqaTeDj3csT3To5s6&_nc_ohc=sbhyyPHXPWYQ7kNvwHqdmBz&_nc_oc=AdlNT_cQ1nDhqM5yF2lMQb7mLcb5kw4CXTM92O6V9drx5QH-1-zJDWd2o3aW_dOlB3IV1agv7ux8bgq0t_S1Mcnk&_nc_zt=23&_nc_ht=scontent.fpio2-1.fna&_nc_gid=tlolwcJ4DmPvydmCaZaYKA&oh=00_AfSr3tUVw0lMVXHUFzkTzR7J2jafYt86UyBVnqsNbVNDKg&oe=68777A5C" alt="Fundadores del restaurante" loading="lazy">
+            <figcaption>👨‍🍳 Fundador y Chef Principal</figcaption>
           </figure>
     
           <figure>
-            <img src="local.png.png" alt="Primer local">
-            <figcaption>Primer y único local</figcaption>
+            <img src="local.png.png" alt="Primer local" loading="lazy">
+            <figcaption>🏪 Nuestro Acogedor Local</figcaption>
           </figure>
+        </div>
+
+        <div class="highlight-box" style="margin-top: 2rem;">
+          <p><strong>¡Te invitamos a ser parte de nuestra historia!</strong> Ven y descubre por qué somos el lugar favorito de las familias iqueñas para disfrutar del mejor chancho tradicional de la región.</p>
         </div>
       </section>
     </main>
