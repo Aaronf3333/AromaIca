@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contacto - Restaurante Aroma</title>
 
   <!-- Bootstrap y Estilos -->
@@ -23,44 +24,75 @@
       color: #333;
     }
 
+    .hero-section {
+      background: linear-gradient(135deg, #8B0000 0%, #dc3545 100%);
+      color: white;
+      text-align: center;
+      padding: 2.5rem 1rem;
+    }
+
+    .hero-section h2 {
+      color: white;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.95);
+      margin: 0;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+
     .main-layout {
       display: flex;
       flex-wrap: wrap;
+      min-height: 60vh;
     }
 
     main {
       flex: 1;
-      padding: 30px;
+      padding: 2rem 1rem;
       max-width: 100%;
     }
 
     .contact-wrapper {
-      max-width: 950px;
+      max-width: 1000px;
       margin: auto;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 40px;
+      gap: 2.5rem;
       background: #ffffffee;
-      padding: 35px;
-      border-radius: 15px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-    }
-
-    .contact-wrapper h2 {
-      grid-column: span 2;
-      text-align: center;
-      font-size: 34px;
-      margin-bottom: 10px;
-      color: #8B0000;
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(0,0,0,0.05);
     }
 
     .intro-text {
       grid-column: span 2;
       text-align: center;
-      font-size: 16px;
+      font-size: 1rem;
       color: #666;
-      margin-bottom: 30px;
-      animation: fadeIn 1s ease-out forwards;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .form-section {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-title {
+      font-size: 1.3rem;
+      color: #8B0000;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
     form {
@@ -68,97 +100,412 @@
       flex-direction: column;
     }
 
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #555;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
     form input, form textarea {
-      font-size: 16px;
-      padding: 12px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      transition: border-color 0.3s;
+      width: 100%;
+      font-size: 1rem;
+      padding: 0.75rem;
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      background: #fafafa;
+      box-sizing: border-box;
     }
 
     form input:focus, form textarea:focus {
       border-color: #8B0000;
       outline: none;
+      background: white;
+      box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.1);
     }
 
-    form button {
-      background-color: #8B0000;
+    form textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .submit-btn {
+      background: linear-gradient(135deg, #8B0000 0%, #a00000 100%);
       color: white;
       border: none;
-      padding: 14px;
-      font-size: 16px;
-      border-radius: 8px;
+      padding: 0.875rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 10px;
       cursor: pointer;
-      transition: background 0.3s;
+      transition: all 0.3s ease;
+      margin-top: 0.5rem;
+      position: relative;
+      overflow: hidden;
     }
 
-    form button:hover {
-      background-color: #a00000;
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(139, 0, 0, 0.3);
+    }
+
+    .submit-btn:active {
+      transform: translateY(0);
     }
 
     .info-contacto {
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
     }
 
-    .info-contacto p {
-      font-size: 16px;
-      margin-bottom: 15px;
-    }
-
-    .info-contacto i {
+    .info-title {
+      font-size: 1.3rem;
       color: #8B0000;
-      margin-right: 8px;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
-    .info-contacto a.whatsapp-btn {
-      display: inline-block;
-      background: #25D366;
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+      padding: 0.75rem;
+      background: #f8f9fa;
+      border-radius: 10px;
+      border-left: 4px solid #8B0000;
+    }
+
+    .contact-item i {
+      color: #8B0000;
+      margin-right: 0.75rem;
+      font-size: 1.1rem;
+      margin-top: 0.1rem;
+      min-width: 20px;
+    }
+
+    .contact-item-content {
+      flex: 1;
+    }
+
+    .contact-item strong {
+      display: block;
+      margin-bottom: 0.25rem;
+      color: #333;
+    }
+
+    .contact-item span {
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    .whatsapp-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #25D366 0%, #1ebe5d 100%);
       color: white;
-      padding: 12px 20px;
-      border-radius: 8px;
+      padding: 0.875rem 1.25rem;
+      border-radius: 12px;
       text-decoration: none;
-      font-weight: bold;
-      font-size: 16px;
+      font-weight: 600;
+      font-size: 1rem;
       text-align: center;
-      margin-top: 10px;
-      transition: background 0.3s;
+      margin-top: 1rem;
+      transition: all 0.3s ease;
+      gap: 0.5rem;
     }
 
-    .info-contacto a.whatsapp-btn:hover {
-      background: #1ebe5d;
+    .whatsapp-btn:hover {
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+    }
+
+    .map-section {
+      grid-column: span 2;
+      margin-top: 1rem;
+    }
+
+    .map-title {
+      font-size: 1.3rem;
+      color: #8B0000;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
     }
 
     .mapa {
-      grid-column: span 2;
       width: 100%;
-      height: 300px;
+      height: 350px;
       border: none;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      margin-top: 10px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     }
 
     .mensaje-final {
       grid-column: span 2;
       text-align: center;
-      margin-top: 20px;
-      color: #555;
+      margin-top: 1.5rem;
+      color: #666;
       font-style: italic;
-      font-size: 15px;
+      font-size: 0.95rem;
+      line-height: 1.5;
     }
 
-    @media (max-width: 768px) {
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .hero-section {
+        padding: 2rem 1rem;
+      }
+
+      .hero-section h2 {
+        font-size: 2.2rem;
+      }
+
       .contact-wrapper {
-        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 2rem;
+      }
+
+      .mapa {
+        height: 320px;
       }
     }
 
+    @media (max-width: 768px) {
+      .hero-section {
+        padding: 1.75rem 1rem;
+      }
+
+      .hero-section h2 {
+        font-size: 1.8rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1rem;
+      }
+
+      main {
+        padding: 1.5rem 0.75rem;
+      }
+
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1.5rem;
+        margin: 0 0.5rem;
+      }
+
+      .intro-text {
+        grid-column: span 1;
+        margin-bottom: 1rem;
+      }
+
+      .map-section {
+        grid-column: span 1;
+      }
+
+      .mensaje-final {
+        grid-column: span 1;
+        margin-top: 1rem;
+      }
+
+      .mapa {
+        height: 280px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero-section {
+        padding: 1.5rem 0.75rem;
+      }
+
+      .hero-section h2 {
+        font-size: 1.6rem;
+      }
+
+      .hero-subtitle {
+        font-size: 0.95rem;
+      }
+
+      main {
+        padding: 1rem 0.5rem;
+      }
+
+      .contact-wrapper {
+        padding: 1.25rem;
+        margin: 0 0.25rem;
+        border-radius: 15px;
+      }
+
+      .form-title, .info-title, .map-title {
+        font-size: 1.1rem;
+      }
+
+      form input, form textarea {
+        padding: 0.65rem;
+        font-size: 0.95rem;
+      }
+
+      .submit-btn, .whatsapp-btn {
+        padding: 0.75rem 1rem;
+        font-size: 0.95rem;
+      }
+
+      .contact-item {
+        padding: 0.65rem;
+      }
+
+      .contact-item i {
+        font-size: 1rem;
+      }
+
+      .mapa {
+        height: 250px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-section h2 {
+        font-size: 1.4rem;
+      }
+
+      .hero-subtitle {
+        font-size: 0.9rem;
+      }
+
+      .contact-wrapper {
+        padding: 1rem;
+        margin: 0 0.125rem;
+      }
+
+      .form-title, .info-title, .map-title {
+        font-size: 1rem;
+      }
+
+      form input, form textarea {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+      }
+
+      form textarea {
+        min-height: 100px;
+      }
+
+      .submit-btn, .whatsapp-btn {
+        padding: 0.7rem 0.875rem;
+        font-size: 0.9rem;
+      }
+
+      .contact-item {
+        padding: 0.5rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .contact-item strong {
+        font-size: 0.9rem;
+      }
+
+      .contact-item span {
+        font-size: 0.85rem;
+      }
+
+      .mapa {
+        height: 220px;
+      }
+    }
+
+    @media (max-width: 320px) {
+      .hero-section {
+        padding: 1.25rem 0.5rem;
+      }
+
+      .hero-section h2 {
+        font-size: 1.2rem;
+      }
+
+      .hero-subtitle {
+        font-size: 0.85rem;
+      }
+
+      .contact-wrapper {
+        padding: 0.75rem;
+        margin: 0;
+        border-radius: 10px;
+      }
+
+      .form-title, .info-title, .map-title {
+        font-size: 0.95rem;
+      }
+
+      form input, form textarea {
+        padding: 0.5rem;
+        font-size: 0.85rem;
+      }
+
+      .submit-btn, .whatsapp-btn {
+        padding: 0.65rem 0.75rem;
+        font-size: 0.85rem;
+      }
+
+      .contact-item {
+        padding: 0.4rem;
+      }
+
+      .contact-item strong {
+        font-size: 0.85rem;
+      }
+
+      .contact-item span {
+        font-size: 0.8rem;
+      }
+
+      .mapa {
+        height: 200px;
+        border-radius: 10px;
+      }
+    }
+
+    /* Animaciones */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
+    }
+
+    .intro-text {
+      animation: fadeIn 1s ease-out forwards;
+    }
+
+    /* Mejoras de accesibilidad */
+    .submit-btn:focus,
+    .whatsapp-btn:focus,
+    form input:focus,
+    form textarea:focus {
+      outline: 3px solid rgba(139, 0, 0, 0.3);
+      outline-offset: 2px;
+    }
+
+    /* Animaciones suaves */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
     }
   </style>
 </head>
@@ -166,34 +513,100 @@
 
   <div id="header" data-include="includes/header.html"></div>
 
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <h2>📞 Contáctanos</h2>
+    <p class="hero-subtitle">¿Tienes alguna consulta, sugerencia o deseas hacer una reserva? ¡Estamos aquí para ayudarte!</p>
+  </section>
+
   <div class="main-layout">
     <div id="sidebar" data-include="includes/sidebar.html"></div>
 
     <main>
       <div class="contact-wrapper">
-        <h2>📞 Contáctanos</h2>
-        <p class="intro-text">¿Tienes alguna consulta, sugerencia o deseas hacer una reserva? ¡Estamos aquí para ayudarte!</p>
+        <p class="intro-text">Nos encanta escuchar de nuestros clientes. Completa el formulario o contáctanos directamente por WhatsApp.</p>
 
-        <form id="contact-form">
-          <input type="text" name="name" placeholder="Tu nombre" required>
-          <input type="email" name="email" placeholder="Tu correo electrónico" required>
-          <textarea name="message" rows="5" placeholder="Tu mensaje" required></textarea>
-          <button type="submit">Enviar mensaje</button>
-        </form>
-
-        <div class="info-contacto">
-          <p><i class="bi bi-geo-alt-fill"></i><strong>Dirección:</strong> Av. Principal 123, Ica, Perú</p>
-          <p><i class="bi bi-telephone-fill"></i><strong>Teléfono:</strong> +51 987 654 321</p>
-          <p><i class="bi bi-envelope-fill"></i><strong>Correo:</strong> aroma.restaurant@gmail.com</p>
-          <a class="whatsapp-btn" href="https://wa.me/51979227265" target="_blank">💬 Escríbenos por WhatsApp</a>
+        <div class="form-section">
+          <h3 class="form-title">
+            <i class="bi bi-envelope-fill"></i>
+            Envíanos un mensaje
+          </h3>
+          <form id="contact-form">
+            <div class="form-group">
+              <label for="name">Nombre completo</label>
+              <input type="text" id="name" name="name" placeholder="Ingresa tu nombre" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Correo electrónico</label>
+              <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Mensaje</label>
+              <textarea id="message" name="message" placeholder="Escribe tu consulta, sugerencia o comentario..." required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">
+              <i class="bi bi-send-fill"></i>
+              Enviar mensaje
+            </button>
+          </form>
         </div>
 
-        <iframe class="mapa"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3870.3496905488973!2d-75.73660602513806!3d-14.056516186367901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9110e3e0c86f9559%3A0x8c2992be9533ab51!2sChancho%20a%20la%20caja%20china%20Aroma%20Restaurante%20Ica!5e0!3m2!1ses!2spe!4v1752280293200!5m2!1ses!2spe"
-          loading="lazy" allowfullscreen>
-        </iframe>
+        <div class="info-contacto">
+          <h3 class="info-title">
+            <i class="bi bi-info-circle-fill"></i>
+            Información de contacto
+          </h3>
+          
+          <div class="contact-item">
+            <i class="bi bi-geo-alt-fill"></i>
+            <div class="contact-item-content">
+              <strong>Dirección</strong>
+              <span>Av. Principal 123, Ica, Perú</span>
+            </div>
+          </div>
 
-        <p class="mensaje-final">También puedes visitarnos directamente en nuestro local y disfrutar de una experiencia culinaria inolvidable.</p>
+          <div class="contact-item">
+            <i class="bi bi-telephone-fill"></i>
+            <div class="contact-item-content">
+              <strong>Teléfono</strong>
+              <span>+51 979 227 265</span>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <i class="bi bi-envelope-fill"></i>
+            <div class="contact-item-content">
+              <strong>Correo electrónico</strong>
+              <span>aroma.restaurant@gmail.com</span>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <i class="bi bi-clock-fill"></i>
+            <div class="contact-item-content">
+              <strong>Horarios de atención</strong>
+              <span>Miércoles a Domingo: 9:00 AM - 5:30 PM</span>
+            </div>
+          </div>
+
+          <a class="whatsapp-btn" href="https://wa.me/51979227265" target="_blank" rel="noopener">
+            <i class="bi bi-whatsapp"></i>
+            Escríbenos por WhatsApp
+          </a>
+        </div>
+
+        <div class="map-section">
+          <h3 class="map-title">
+            <i class="bi bi-map-fill"></i>
+            Ubicación
+          </h3>
+          <iframe class="mapa"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3870.3496905488973!2d-75.73660602513806!3d-14.056516186367901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9110e3e0c86f9559%3A0x8c2992be9533ab51!2sChancho%20a%20la%20caja%20china%20Aroma%20Restaurante%20Ica!5e0!3m2!1ses!2spe!4v1752280293200!5m2!1ses!2spe"
+            loading="lazy" allowfullscreen>
+          </iframe>
+        </div>
+
+        <p class="mensaje-final">También puedes visitarnos directamente en nuestro local y disfrutar de una experiencia culinaria inolvidable en el corazón de Ica.</p>
       </div>
     </main>
   </div>
@@ -206,13 +619,20 @@
     document.getElementById("contact-form").addEventListener("submit", function (event) {
       event.preventDefault();
 
+      // Mostrar indicador de carga
+      const submitBtn = event.target.querySelector('.submit-btn');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<i class="bi bi-hourglass-split"></i> Enviando...';
+      submitBtn.disabled = true;
+
       emailjs.sendForm("service_ux43pr3", "template_5b3fk0w", this)
         .then(() => {
           Swal.fire({
             icon: 'success',
-            title: 'Mensaje enviado',
-            text: '✅ ¡Tu mensaje fue enviado correctamente!',
-            confirmButtonColor: '#8B0000'
+            title: '¡Mensaje enviado!',
+            text: '✅ Tu mensaje fue enviado correctamente. Te responderemos pronto.',
+            confirmButtonColor: '#8B0000',
+            confirmButtonText: 'Perfecto'
           });
           this.reset();
         }, (error) => {
@@ -220,10 +640,33 @@
           Swal.fire({
             icon: 'error',
             title: 'Error al enviar',
-            text: '❌ Ocurrió un error al enviar el mensaje. Inténtalo más tarde.',
-            confirmButtonColor: '#8B0000'
+            text: '❌ Ocurrió un error al enviar el mensaje. Por favor, inténtalo más tarde o contáctanos por WhatsApp.',
+            confirmButtonColor: '#8B0000',
+            confirmButtonText: 'Entendido'
           });
+        })
+        .finally(() => {
+          // Restaurar botón
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
         });
+    });
+
+    // Validación en tiempo real
+    document.querySelectorAll('input, textarea').forEach(field => {
+      field.addEventListener('blur', function() {
+        if (this.value.trim() === '' && this.hasAttribute('required')) {
+          this.style.borderColor = '#dc3545';
+        } else {
+          this.style.borderColor = '#28a745';
+        }
+      });
+
+      field.addEventListener('input', function() {
+        if (this.style.borderColor === 'rgb(220, 53, 69)') {
+          this.style.borderColor = '#e0e0e0';
+        }
+      });
     });
   </script>
 
