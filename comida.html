@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Platos Típicos - Restaurante Aroma</title>
+
+  <!-- Bootstrap y estilos -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <script src="includes.js" defer></script>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #fff8f0;
+      color: #333;
+    }
+
+    main {
+      padding: 40px 5%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .plato {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .plato:hover {
+      transform: scale(1.02);
+    }
+
+    .plato img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .contenido {
+      padding: 15px;
+    }
+
+    .contenido h3 {
+      margin: 0 0 5px;
+      font-size: 20px;
+      color: #8B0000;
+    }
+
+    .contenido p {
+      margin: 0 0 10px;
+      font-size: 15px;
+    }
+
+    .btn-wsp, .btn-delivery {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 8px 15px;
+      border-radius: 5px;
+      font-weight: 500;
+      text-decoration: none;
+      color: white;
+    }
+
+    .btn-wsp {
+      background-color: #25D366;
+    }
+
+    .btn-delivery {
+      background-color: #007BFF;
+    }
+
+    .btn-wsp i, .btn-delivery i {
+      margin-right: 6px;
+    }
+
+    .info-horario {
+      background: #8B0000;
+      color: white;
+      text-align: center;
+      padding: 12px 0;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div id="header" data-include="includes/header.html"></div>
+
+  <!-- INFO HORARIO -->
+  <div class="info-horario">
+    <p>📍 Atendemos de <strong>Miércoles a Domingo de 9:00 a.m. a 5:00 p.m.</strong> | 🚚 Servicio de Delivery disponible</p>
+  </div>
+
+  <!-- TÍTULO -->
+  <section class="text-center py-4 bg-light">
+    <h1 class="text-danger fw-bold">Menú Especial</h1>
+    <p class="lead">Nuestros mejores platos de chancho, preparados con pasión.</p>
+  </section>
+
+  <!-- PLATOS -->
+  <main>
+
+    <!-- Chaufa de Chancho -->
+    <div class="plato">
+      <img src="https://scontent.fpio2-1.fna.fbcdn.net/v/t39.30808-6/469939344_929215619142668_5731627454412564599_n.jpg?stp=c0.132.1260.1260a_dst-jpg_s206x206_tt6&_nc_cat=101&ccb=1-7&_nc_sid=50ad20&_nc_eui2=AeG2DGurVqvzpuzFVqlkzWCKYpVoAJNlwd9ilWgAk2XB39nXfEzqW3ajXvgTybSN-F1kLyZbkPPE93n2_NS2EJKx&_nc_ohc=gskhEnaAMn8Q7kNvwF9iE3m&_nc_oc=AdllILb4lFvSRzkrC3As9kaVAsiE_xPT6sycutvzoaoBJ7lo8X7qYucy2LL3qUFIQaeqyj-M12qj-wHvFpfvWfem&_nc_zt=23&_nc_ht=scontent.fpio2-1.fna&_nc_gid=rIqHuNY0EIAWIsznLQkEPA&oh=00_AfQApVw1PFuybQUstzIdnWza9X7L01yQzo6Vr2IA-ZzI3Q&oe=68774224" alt="Chaufa de Chancho">
+      <div class="contenido">
+        <h3>Chaufa de Chancho</h3>
+        <p>Arroz chaufa con trozos de chancho frito y salsa oriental.</p>
+        <a class="btn-wsp" href="https://wa.me/51979227265?text=Hola%20quisiera%20hacer%20un%20pedido%20de%20Chaufa%20de%20Chancho" target="_blank"><i class="bi bi-whatsapp"></i> Pedir por WhatsApp</a>
+        <a class="btn-delivery" href="https://wa.me/51979227265?text=Hola,%20quisiera%20hacer%20un%20pedido%20por%20DELIVERY" target="_blank"><i class="bi bi-truck"></i> Delivery</a>
+      </div>
+    </div>
+
+    <!-- Carapulcra con Sopa Seca -->
+    <div class="plato">
+      <img src="https://scontent.fpio2-1.fna.fbcdn.net/v/t39.30808-6/469875992_929214575809439_2692543610298464449_n.jpg?stp=c113.0.452.452a_dst-jpg_s206x206_tt6&_nc_cat=106&ccb=1-7&_nc_sid=50ad20&_nc_eui2=AeEHskMNbML-GK1Gz92S1TDxy1DN8QUIYFHLUM3xBQhgUUDJLm6g5dXoVO2rIDHRQMegRBWUZICkKnaO6g4fBvZV&_nc_ohc=GMWU1n-YjX0Q7kNvwESyJau&_nc_oc=AdkwAjqQKrEkVZgcLKHXlZ27vWJG698HyTNRZDjWPlu1ZJKTXwe0cnEbeGt0x1_ncUkv_CiDsL9vN_1ADmz4h-AJ&_nc_zt=23&_nc_ht=scontent.fpio2-1.fna&_nc_gid=rIqHuNY0EIAWIsznLQkEPA&oh=00_AfTBFD_HROu9-_vqzWayfiDDvDcoNKwke--MsMYkUgmMgQ&oe=68773A8E" alt="Carapulcra con Sopa Seca">
+      <div class="contenido">
+        <h3>Carapulcra con Sopa Seca</h3>
+        <p>Delicia iqueña con papa seca, tallarines y chancho.</p>
+        <a class="btn-wsp" href="https://wa.me/51979227265?text=Hola%20quisiera%20hacer%20un%20pedido%20de%20Carapulcra%20con%20Sopa%20Seca" target="_blank"><i class="bi bi-whatsapp"></i> Pedir por WhatsApp</a>
+        <a class="btn-delivery" href="https://wa.me/51979227265?text=Hola,%20quisiera%20hacer%20un%20pedido%20por%20DELIVERY" target="_blank"><i class="bi bi-truck"></i> Delivery</a>
+      </div>
+    </div>
+
+    <!-- Chancho a la Caja China -->
+    <div class="plato">
+      <img src="https://scontent.fpio2-1.fna.fbcdn.net/v/t39.30808-6/487956260_1078981577578795_8709063498760344093_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGKZ9yXDj-H4oUIsfvIA5oGLuVdsMglNkQu5V2wyCU2RJQDJyIzULGE8G3x4Qb1gsrpRRhNlgJ-GVp1p4-Abxm4&_nc_ohc=7RJvRRaRB9AQ7kNvwFRZPch&_nc_oc=AdnJoQH-gZejS8oEHDA7Cpc5o7dJf3-QZN_eXIgQgiZ42HH6Mn28vGO9gg9DA-qxg6u0N9JjY1DxVC4_-klwK38d&_nc_zt=23&_nc_ht=scontent.fpio2-1.fna&_nc_gid=yT-H75Pz2sVv_g8AXnbO2g&oh=00_AfRXF_sPP1Twl2-7-GOnqKFSKfp-JmMc2UA01QKYgbPWZw&oe=68773372" alt="Chancho a la Caja China">
+      <div class="contenido">
+        <h3>Chancho a la Caja China</h3>
+        <p>Corteza crocante y carne jugosa al estilo tradicional.</p>
+        <a class="btn-wsp" href="https://wa.me/51979227265?text=Hola%20quisiera%20hacer%20un%20pedido%20de%20Chancho%20a%20la%20Caja%20China" target="_blank"><i class="bi bi-whatsapp"></i> Pedir por WhatsApp</a>
+        <a class="btn-delivery" href="https://wa.me/51979227265?text=Hola,%20quisiera%20hacer%20un%20pedido%20por%20DELIVERY" target="_blank"><i class="bi bi-truck"></i> Delivery</a>
+      </div>
+    </div>
+
+    <!-- Chancho al Palo -->
+    <div class="plato">
+      <img src="https://scontent.fpio2-1.fna.fbcdn.net/v/t39.30808-6/488964688_1082525283891091_7954818137536091323_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFtnrf8jKLHBHbK3Q6ZuUi0aXsOrfruvY5pew6t-u69ju4KgSvcgdqOF_tITX215KjLEG5denheoyq6t744T8GX&_nc_ohc=kmGWLok70OMQ7kNvwHIev1d&_nc_oc=AdlmTrQs_nYAok_ecIwnE_eo1D54sQXN4omA_WoFkQne13iAX8M4oWK1ZRSETWjKGsVDekRAN4qhFJX1djtk0M2x&_nc_zt=23&_nc_ht=scontent.fpio2-1.fna&_nc_gid=b8Z8gznBJPWSGDdqoyqAGA&oh=00_AfS-6hp2uDgzj6rDtS9uJ1STHnziLqU9UCqNx7w72MT1lg&oe=68773C9B" alt="Chancho al Palo">
+      <div class="contenido">
+        <h3>Chancho al Palo</h3>
+        <p>Chancho cocido al fuego directo con sabor intenso.</p>
+        <a class="btn-wsp" href="https://wa.me/51979227265?text=Hola%20quisiera%20hacer%20un%20pedido%20de%20Chancho%20al%20Palo" target="_blank"><i class="bi bi-whatsapp"></i> Pedir por WhatsApp</a>
+        <a class="btn-delivery" href="https://wa.me/51979227265?text=Hola,%20quisiera%20hacer%20un%20pedido%20por%20DELIVERY" target="_blank"><i class="bi bi-truck"></i> Delivery</a>
+      </div>
+    </div>
+
+    <!-- Chancho al Cilindro -->
+    <div class="plato">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLv-ZTK0wJppIy6x679-afDlTWxyRlCsqylQ&s" alt="Chancho al Cilindro">
+      <div class="contenido">
+        <h3>Chancho al Cilindro</h3>
+        <p>Chancho ahumado lentamente en cilindro artesanal.</p>
+        <a class="btn-wsp" href="https://wa.me/51979227265?text=Hola%20quisiera%20hacer%20un%20pedido%20de%20Chancho%20al%20Cilindro" target="_blank"><i class="bi bi-whatsapp"></i> Pedir por WhatsApp</a>
+        <a class="btn-delivery" href="https://wa.me/51979227265?text=Hola,%20quisiera%20hacer%20un%20pedido%20por%20DELIVERY" target="_blank"><i class="bi bi-truck"></i> Delivery</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <div id="footer" data-include="includes/footer.html"></div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

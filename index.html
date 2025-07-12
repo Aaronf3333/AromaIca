@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Restaurante Aroma - Inicio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="includes.js" defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff8f0;
+      color: #333;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)),
+                  url('https://scontent.fpio2-1.fna.fbcdn.net/v/t39.30808-1/406511971_748148280662128_7456157283253363692_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=111&ccb=1-7&_nc_sid=2d3e12&_nc_eui2=AeG1qmap6aRyovfY2u8knFYjhsPvz2N2kxGGw-_PY3aTEVKlFN9_T-ViZQUhdb37YE4-9vHmU40IVv5TSdlrMrdt&_nc_ohc=6IFt9cwVUYEQ7kNvwGrj6dH&_nc_oc=AdmzzMQlF34ARQntFED12i5a3aemCYBWdODkS-GN0nMNsjG36wZCaMN2GpKveAE-Jfu3AqmfKa--sm6KKTuc2-Gt&_nc_zt=24&_nc_ht=scontent.fpio2-1.fna&_nc_gid=zIPm303LOJD5v3WkVXKdpw&oh=00_AfRltpqMuhysXwQ4t6o6kl5JCJO3-8cwn03M_tSgQNgkIw&oe=68773DAE') center/cover no-repeat;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .hero .content {
+      color: #fff;
+      z-index: 1;
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
+
+    .hero a.btn {
+      background-color: #dc3545;
+      color: white;
+      padding: 12px 30px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .hero a.btn:hover {
+      background-color: #bb2d3b;
+    }
+
+    .main-layout {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    main {
+      flex: 1;
+      padding: 30px;
+    }
+
+    .destacados {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .plato {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .plato:hover {
+      transform: translateY(-5px);
+    }
+
+    .plato img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .plato .info {
+      padding: 15px;
+    }
+
+    .plato h5 {
+      color: #8B0000;
+      margin-bottom: 10px;
+    }
+
+    .plato p {
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .main-layout {
+        flex-direction: column;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER (desde includes.js) -->
+  <div id="header"></div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="content">
+      <h1>Restaurante Aroma</h1>
+      <p>El auténtico sabor del chancho peruano, directo desde el corazón de Ica.</p>
+      <p>Platos tradicionales preparados con amor, sabor y tradición.</p>
+      <a href="comida.html" class="btn"><i class="bi bi-list"></i> Ver Menú</a>
+    </div>
+  </section>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="main-layout">
+    <!-- SIDEBAR (desde includes.js) -->
+    <div id="sidebar"></div>
+
+    <!-- SECCIÓN DE PLATOS -->
+    <main>
+      <h2 class="mb-4">Platos Recomendados</h2>
+
+      <div class="destacados">
+        <div class="plato">
+          <img src="https://scontent.fpio2-1.fna.fbcdn.net/v/t39.30808-6/487956260_1078981577578795_8709063498760344093_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGKZ9yXDj-H4oUIsfvIA5oGLuVdsMglNkQu5V2wyCU2RJQDJyIzULGE8G3x4Qb1gsrpRRhNlgJ-GVp1p4-Abxm4&_nc_ohc=7RJvRRaRB9AQ7kNvwFRZPch&_nc_oc=AdnJoQH-gZejS8oEHDA7Cpc5o7dJf3-QZN_eXIgQgiZ42HH6Mn28vGO9gg9DA-qxg6u0N9JjY1DxVC4_-klwK38d&_nc_zt=23&_nc_ht=scontent.fpio2-1.fna&_nc_gid=yT-H75Pz2sVv_g8AXnbO2g&oh=00_AfRXF_sPP1Twl2-7-GOnqKFSKfp-JmMc2UA01QKYgbPWZw&oe=68773372" alt="Caja China">
+          <div class="info">
+            <h5>Chancho a la Caja China</h5>
+            <p>Carne crocante y jugosa, cocida a fuego lento con especias tradicionales.</p>
+          </div>
+        </div>
+        <div class="plato">
+          <img src="https://scontent.fpio2-1.fna.fbcdn.net/v/t39.30808-6/469875992_929214575809439_2692543610298464449_n.jpg?stp=c113.0.452.452a_dst-jpg_s206x206_tt6&_nc_cat=106&ccb=1-7&_nc_sid=50ad20&_nc_eui2=AeEHskMNbML-GK1Gz92S1TDxy1DN8QUIYFHLUM3xBQhgUUDJLm6g5dXoVO2rIDHRQMegRBWUZICkKnaO6g4fBvZV&_nc_ohc=GMWU1n-YjX0Q7kNvwESyJau&_nc_oc=AdkwAjqQKrEkVZgcLKHXlZ27vWJG698HyTNRZDjWPlu1ZJKTXwe0cnEbeGt0x1_ncUkv_CiDsL9vN_1ADmz4h-AJ&_nc_zt=23&_nc_ht=scontent.fpio2-1.fna&_nc_gid=rIqHuNY0EIAWIsznLQkEPA&oh=00_AfTBFD_HROu9-_vqzWayfiDDvDcoNKwke--MsMYkUgmMgQ&oe=68773A8E" alt="Carapulcra con sopa seca">
+          <div class="info">
+            <h5>Carapulcra con Sopa Seca</h5>
+            <p>Un clásico iqueño acompañado de una porción de chancho al estilo Aroma.</p>
+          </div>
+        </div>
+        <div class="plato">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLv-ZTK0wJppIy6x679-afDlTWxyRlCsqylQ&s" alt="Chancho al Cilindro">
+          <div class="info">
+            <h5>Chancho al Cilindro</h5>
+            <p>Una explosión de sabor con ese ahumado que solo Aroma sabe preparar.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- FOOTER -->
+  <div id="footer"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
